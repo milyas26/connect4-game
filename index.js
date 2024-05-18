@@ -18,6 +18,10 @@ const play = (col) => {
         return currentPlayer;
       }
 
+      if (checkIsDraw(board)) {
+        return "Draw";
+      }
+
       currentPlayer = currentPlayer === "R" ? "Y" : "R";
       break;
     }
@@ -113,6 +117,10 @@ function checkDiagonallyWinLeft(board, player, row, col) {
     row++;
     col--;
   }
+}
+
+function checkIsDraw(board) {
+  return board.every((row) => row.every((cell) => cell !== " "));
 }
 
 play(0); // R

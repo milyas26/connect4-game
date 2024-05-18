@@ -1,5 +1,4 @@
-
-# Connect 4 Logic Test!
+# Connect 4 Game
 
 This is a logic test based on the classic game **Connect 4**. It's not the most logical choice for a technical job interview, but hey, let's roll with it! 😅
 
