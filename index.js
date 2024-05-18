@@ -10,15 +10,11 @@ const play = (col) => {
     if (board[i][col] === " ") {
       board[i][col] = currentPlayer;
 
-      if (checkHorizontallyWin(board, i)) {
-        return currentPlayer;
-      }
-
-      if (checkVerticalWin(board, currentPlayer)) {
-        return currentPlayer;
-      }
-
-      if (checkDiagonallyWin(board, currentPlayer)) {
+      if (
+        checkHorizontallyWin(board, i) ||
+        checkVerticalWin(board, currentPlayer) ||
+        checkDiagonallyWin(board, currentPlayer)
+      ) {
         return currentPlayer;
       }
 
