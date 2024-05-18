@@ -1,7 +1,7 @@
 // CONNECT 4 GAME
 const rows = 6;
 const columns = 7;
-let currentPlayer = "Y";
+let currentPlayer = "R";
 
 const board = Array.from({ length: rows }, () => Array(columns).fill(" "));
 
@@ -10,18 +10,15 @@ const play = (col) => {
     if (board[i][col] === " ") {
       board[i][col] = currentPlayer;
 
-      const horizontalWin = checkHorizontallyWin(board, i);
-      if (horizontalWin) {
+      if (checkHorizontallyWin(board, i)) {
         return currentPlayer;
       }
 
-      const vertical = checkVerticalWin(board, currentPlayer);
-      if (vertical) {
+      if (checkVerticalWin(board, currentPlayer)) {
         return currentPlayer;
       }
 
-      const diagonal = checkDiagonallyWin(board, currentPlayer);
-      if (diagonal) {
+      if (checkDiagonallyWin(board, currentPlayer)) {
         return currentPlayer;
       }
 
